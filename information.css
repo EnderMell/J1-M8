@@ -1,0 +1,11 @@
+
+.pokemon{
+    text-align: center;
+    font-family: arial;
+    font-size:30px;
+}
+
+img{
+    width:200px;
+    border:solid 5px #a2ea8e;
+}
