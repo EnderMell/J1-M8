@@ -2,11 +2,35 @@
     margin:0;
     padding:0;
 }
+#links{
+width:100%;
+height: 50px;
+background-color: #b1f5ac;
+font-family: arial;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+li {
+    float: left;
+  }
+  
+ #links a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+
+  }
 
 img{
  height:100px;
 }
 
+#body{
+    clear:both;
+}
 .product{
     display:inline-block;
     border: solid 3px #a2ea8e;
@@ -16,9 +40,20 @@ img{
     margin:10px;
 }
 
+
 .row{
     border:1px solid black;
     width:100%;
     height:100%;
+}
+
+#formulier{
+width:100%;
+border:1px solid black;
+text-align: center;
+margin-top:10px;
+padding-top:10px;
+padding-bottom:10px;
+font-family: arial;
 }
 

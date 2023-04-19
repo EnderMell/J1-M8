@@ -27,7 +27,7 @@ if ($result->num_rows > 0) {
   while($row = $result->fetch_assoc()) {
     if($row['id'] == $id) 
     {
-        echo "<div class='pokemon'> id: " . $row["id"]. "<br>" . " Name: " . $row["name"]. "<br> Type: " . $row["type"]. " " . $row["type_2"] . "<br> Ability 1: " . $row["ability"] 
+        echo "<div class='pokemon'> id: " . $row["id"]. "<br>" . " Name: " . $row["name"]. "<br> Type: " . $row["type"]. "<br> Type 2: " . $row["type_2"] . "<br> Ability 1: " . $row["ability"] 
     . "<br> Ability 2: " . $row["ability_2"] . "<br> <br>" .  "<img src=" . $row['IMG'] . " />" . "</div>";
     }
   }

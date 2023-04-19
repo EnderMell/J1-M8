@@ -1,5 +1,17 @@
 <link href="style.css" rel="stylesheet">
 
+<div id='header'>
+  <ul>
+  <div id='links'>
+  <ul>
+    <li><a href="index.php">Home</a></li>
+    <li><a href="normal.php">Normal</a></li>
+    <li><a href="#">Plants</a></li>
+    <li><a href="#">Poision</a></li>
+
+  </ul>
+</div>
+<div id="body">
 <?php
 $servername = "localhost";
 $username = "root";
@@ -12,6 +24,10 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
+if(isset($_POST['submit'])){ 
+$sql = "INSERT INTO pokemon (name, type, type_2, ability, ability_2, IMG ) VALUES ( '". $_POST['name'] . "','". $_POST['type'] . "')";
+$result = $conn->query($sql);
+} 
 "<div class='row'>";
 $sql = "SELECT id, name, type, type_2, ability, ability_2, IMG FROM pokemon";
 $result = $conn->query($sql);
@@ -31,6 +47,20 @@ $conn->close();
 "</div>"
 
 ?>
+</div>
+
+<div id="formulier">
+<form method="post">
+  <p> Name of Pokemon: </p><input type="text" name="name">
+  <p> type of Pokemon: </p><input type="text" name="type">
+  <p> type 2 of Pokemon: </p><input type="text" name="type_2">
+  <p> ability of Pokemon: </p><input type="text" name="ability">
+  <p> ability 2 of Pokemon: </p> <input type="text" name="ability_2">
+  <p> Link to Internet IMG: </p><input type="text" name="img"><br><br>
+  <input type="submit" name="submit">
+</form>
+</div>
+
 
 
 
