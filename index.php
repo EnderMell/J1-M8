@@ -25,7 +25,8 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 if(isset($_POST['submit'])){ 
-$sql = "INSERT INTO pokemon (name, type, type_2, ability, ability_2, IMG ) VALUES ( '". $_POST['name'] . "','". $_POST['type'] . "')";
+$sql = "INSERT INTO pokemon (name, type, type_2, ability, ability_2, IMG) VALUES ( '". $_POST['name'] . "','". $_POST['type'] . "', '". $_POST['type_2'] ."'
+, '". $_POST['ability'] ."', '". $_POST['ability_2'] ."', '". $_POST['img'] ."')";
 $result = $conn->query($sql);
 } 
 "<div class='row'>";
@@ -49,17 +50,28 @@ $conn->close();
 ?>
 </div>
 
-<div id="formulier">
-<form method="post">
-  <p> Name of Pokemon: </p><input type="text" name="name">
-  <p> type of Pokemon: </p><input type="text" name="type">
-  <p> type 2 of Pokemon: </p><input type="text" name="type_2">
-  <p> ability of Pokemon: </p><input type="text" name="ability">
-  <p> ability 2 of Pokemon: </p> <input type="text" name="ability_2">
-  <p> Link to Internet IMG: </p><input type="text" name="img"><br><br>
-  <input type="submit" name="submit">
-</form>
+  <h3> Add a Pokémon!</h3><br>
+  <div id="ditidk">
+  <div class="col-25">  
+    <p> Name of Pokemon: </p>
+   <p> type of Pokemon: </p>
+    <p> type 2 of Pokemon: </p>
+    <p> ability of Pokemon: </p>
+    <p> ability 2 of Pokemon: </p>
+    <p> Link to Internet IMG: </p>
+  </div>
+
+  <form method="post" id='vakjes'>
+    <input type="text" name="name" required> 
+    <input type="text" name="type" required> 
+    <input type="text" name="type_2"> 
+    <input type="text" name="ability" required> 
+    <input type="text" name="ability_2"> 
+    <input type="text" name="img" required><br><br> 
+    <input type="submit" name="submit" id="button">
+  </form>
 </div>
+
 
 
 
