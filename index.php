@@ -1,16 +1,26 @@
-<link href="style.css" rel="stylesheet">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="style.css" rel="stylesheet">
+  <title>Pokémon</title>
+</head>
 
-<div id='header'>
-  <ul>
-  <div id='links'>
-  <ul>
-    <li><a href="index.php">Home</a></li>
-    <li><a href="normal.php">Normal</a></li>
-    <li><a href="#">Plants</a></li>
-    <li><a href="#">Poision</a></li>
-
+<div class="navbar">
+  <div class="logo"><a href="index.html">Pokémons</a></div>
+  <ul class="links">
+    <li><a href="#">Plant</a></li>
+    <li><a href="#">Electric</a></li>
+    <li><a href="#">Fairy</a></li>
+    <li><a href="#">Gohst</a></li>
   </ul>
+    
 </div>
+
+
+<body>
 <div id="body">
 <?php
 $servername = "localhost";
@@ -49,24 +59,22 @@ $conn->close();
 
 ?>
 </div>
+<div id="ditidk">
+  <h3 class="thing"> Add a Pokémon!</h3><br>
 
-  <h3> Add a Pokémon!</h3><br>
-  <div id="ditidk">
-  <div class="col-25">  
-    <p> Name of Pokemon: </p>
-   <p> type of Pokemon: </p>
-    <p> type 2 of Pokemon: </p>
-    <p> ability of Pokemon: </p>
-    <p> ability 2 of Pokemon: </p>
-    <p> Link to Internet IMG: </p>
-  </div>
 
   <form method="post" id='vakjes'>
+    <p class="thing"> Name of Pokemon: </p>
     <input type="text" name="name" required> 
+    <p class="thing"> type of Pokemon: </p>
     <input type="text" name="type" required> 
+    <p class="thing"> type 2 of Pokemon: </p>
     <input type="text" name="type_2"> 
+    <p class="thing"> ability of Pokemon: </p>
     <input type="text" name="ability" required> 
+    <p class="thing"> ability 2 of Pokemon: </p>
     <input type="text" name="ability_2"> 
+    <p class="thing"> Link to Internet IMG: </p>
     <input type="text" name="img" required><br><br> 
     <input type="submit" name="submit" id="button">
   </form>
@@ -76,5 +84,8 @@ $conn->close();
 
 
 
-
 <script src="script.js" ></script>
+
+
+</body>
+</html>
