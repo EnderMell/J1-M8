@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="style.css" rel="stylesheet">
+  <link href="style.css?t=<?php echo time()?>" rel="stylesheet">
   <title>Pokémon</title>
 </head>
 
@@ -34,6 +34,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
+
 if(isset($_POST['submit'])){ 
 $sql = "INSERT INTO pokemon (name, type, type_2, ability, ability_2, IMG) VALUES ( '". $_POST['name'] . "','". $_POST['type'] . "', '". $_POST['type_2'] ."'
 , '". $_POST['ability'] ."', '". $_POST['ability_2'] ."', '". $_POST['img'] ."')";
@@ -49,7 +50,8 @@ if ($result->num_rows > 0) {
 
   <?php
   while($row = $result->fetch_assoc()) {
-    echo "<div class='product'> " . $row["name"].  "<br> <br>" .  "<a href='information.php?id=". $row['id'] ."'><img src=" . $row['IMG'] . " /></a>" . "<br>" . "</div>";
+    echo "<div class='product'> " . $row["name"].  "<br> <br>" .  "<a href='information.php?id=". $row['id'] ."'><img src=" . $row['IMG'] . " /></a>" . "<br>" .
+     "<div id='delete'> <a href='delete.php?id=". $row['id'] ."'> Delete </a></div> </div>";
   }
 } else {
   echo "0 results";
